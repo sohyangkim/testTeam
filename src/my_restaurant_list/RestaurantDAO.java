@@ -11,7 +11,7 @@ public class RestaurantDAO {
 
   // MemberVO 타입의 데이터를 받아 DB에 저장하는 함수
   public void insert(RestaurantVO vo) {
-    memMap.put(vo.getName(), vo);
+    memMap.put(vo.getCategory(), vo);
   }
 
   // 전달받은 상호명으로 등록 여부 확인함수
@@ -26,7 +26,7 @@ public class RestaurantDAO {
 
   //회원정보수정
   public void update(RestaurantVO vo) {
-   memMap.put(vo.getName(), vo);
+   memMap.put(vo.getCategory(), vo);
    
     
   }

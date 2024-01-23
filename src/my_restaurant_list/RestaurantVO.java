@@ -5,8 +5,8 @@ import java.util.Date;
 //MemberRegisterSerivce를 정리
 public class RestaurantVO {
 
-  private String name;
   private String category;
+  private String name;
   private String starpoint;
   private Date regDate;
 
@@ -14,8 +14,8 @@ public class RestaurantVO {
   }
 
   public RestaurantVO(String category, String name, String starpoint, Date regDate) {
-    this.name = name;
     this.category = category;
+    this.name = name;
     this.starpoint = starpoint;
     this.regDate = regDate;
   }

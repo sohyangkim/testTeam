@@ -47,7 +47,7 @@ public class MainController {
         // 전달받은 데이터를 RequestDTO 객체에 담는다.
         RequestDTO dto = new RequestDTO(userInputs[1], userInputs[2], userInputs[3]);
 
-       RestaurantRegisterSerivce regSrv = new RestaurantRegisterSerivce();
+        RestaurantRegisterSerivce regSrv = new RestaurantRegisterSerivce();
         regSrv.regist(dto);
 
       } else if (userInput.compareToIgnoreCase("totalList") == 0) {
@@ -61,7 +61,7 @@ public class MainController {
 
         // 유효성검사 - 전달받은 정보의 개수를 확인
         if (userInputs.length != 2) {
-          System.out.println("카테고리를 입력하세요.");
+          System.out.println("카테고리 검색 양식에 맞게 입력하세요.");
           System.out.println("♧ 카테고리 리스트 ♧ categoryList 카테고리(한식,중식,일식,양식 택1)");
           
           help();

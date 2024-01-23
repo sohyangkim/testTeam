@@ -8,7 +8,7 @@ public class RestaurantChangeService {
     this.dao = new RestaurantDAO();
   }
 
-  // 비번 변경 요청함수
+  // 별점 변경 요청함수
   public void changestarpoint(String[] userInputs) {
     String name = userInputs[1];
     String oldstarpoint = userInputs[2];
