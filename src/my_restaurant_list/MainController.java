@@ -9,7 +9,7 @@ public class MainController {
     System.out.println("----------------------------------");
     System.out.println("♧ 맛집추가 ♧ new 카테고리(한식,중식,일식,양식) 상호명 별점(0~5점)");
     System.out.println("♧ 별점변경 ♧ change 상호명 기존별점 변경별점");
-    System.out.println("♧ 전체리스트 ♧ totalList");
+    System.out.println("♧ 전체리스트 ♧ totalList");   
     System.out.println("♧ 카테고리 리스트 ♧ categoryList 카테고리(한식,중식,일식,양식)");
     System.out.println("♧ 맛집프로그램 종료 ♧ exit");
     System.out.println();

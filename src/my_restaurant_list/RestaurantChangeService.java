@@ -14,7 +14,7 @@ public class RestaurantChangeService {
     String oldstarpoint = userInputs[2];
     String newstarpoint = userInputs[3];
 
-    // 이메일에 해당하는 회원유무
+    //해당 상호명 유무
     RestaurantVO vo = dao.selectOne(name);
     if (vo == null) {
       System.out.println("입력한 상호명과 일치하는 정보가 없습니다.");
