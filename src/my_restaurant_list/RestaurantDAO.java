@@ -15,8 +15,8 @@ public class RestaurantDAO {
   }
 
   // 전달받은 상호명으로 등록 여부 확인함수
-  public RestaurantVO selectOne(String name) {
-    return memMap.get(name);// MemberVO 객체 리턴
+  public RestaurantVO selectOne(String category) {
+    return memMap.get(category);// MemberVO 객체 리턴
   }
 
   // 전체회원 목록

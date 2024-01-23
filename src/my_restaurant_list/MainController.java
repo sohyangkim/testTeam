@@ -54,14 +54,16 @@ public class MainController {
 
         RestaurantTotalListService lstSrv = new RestaurantTotalListService();
 
-        // 전체회원정보 목록 출력
+        // 맛집 목록 출력
         lstSrv.printRestaurantList();
 
       } else if (userInput.startsWith("categoryList")) {
 
         // 유효성검사 - 전달받은 정보의 개수를 확인
         if (userInputs.length != 2) {
-          System.out.println("입력하신 정보가 형식에 맞지 않습니다.");
+          System.out.println("카테고리를 입력하세요.");
+          System.out.println("♧ 카테고리 리스트 ♧ categoryList 카테고리(한식,중식,일식,양식 택1)");
+          
           help();
           continue;
         }
