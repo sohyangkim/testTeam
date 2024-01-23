@@ -7,10 +7,10 @@ public class MainController {
   public static void help() {
     System.out.println("명령어 사용법 :");
     System.out.println("----------------------------------");
-    System.out.println("♧ 맛집추가 ♧ new 카테고리(한식,중식,일식,양식) 상호명 별점");
+    System.out.println("♧ 맛집추가 ♧ new 카테고리(한식,중식,일식,양식) 상호명 별점(0~5점)");
     System.out.println("♧ 별점변경 ♧ change 상호명 기존별점 변경별점");
     System.out.println("♧ 전체리스트 ♧ totalList");
-    System.out.println("♧ 카테고리 리스트 ♧ categoryList");
+    System.out.println("♧ 카테고리 리스트 ♧ categoryList 카테고리(한식,중식,일식,양식)");
     System.out.println("♧ 맛집프로그램 종료 ♧ exit");
     System.out.println();
   }
@@ -50,14 +50,14 @@ public class MainController {
        RestaurantRegisterSerivce regSrv = new RestaurantRegisterSerivce();
         regSrv.regist(dto);
 
-      } else if (userInput.compareToIgnoreCase("totallist") == 0) {
+      } else if (userInput.compareToIgnoreCase("totalList") == 0) {
 
         RestaurantTotalListService lstSrv = new RestaurantTotalListService();
 
         // 전체회원정보 목록 출력
         lstSrv.printRestaurantList();
 
-      } else if (userInput.startsWith("categoryListService")) {
+      } else if (userInput.startsWith("categoryList")) {
 
         // 유효성검사 - 전달받은 정보의 개수를 확인
         if (userInputs.length != 2) {
@@ -68,7 +68,7 @@ public class MainController {
 
         // MemberInfoService 에서 printMember(email)호출
         RestaurantCategoryListService infoSrv = new RestaurantCategoryListService();
-        infoSrv.printMember(userInputs[1]);
+        infoSrv.printRestaurant(userInputs[1]);
         
         //change 이메일 현재암호
         }else if(userInput.startsWith("change")) {
@@ -80,7 +80,7 @@ public class MainController {
         }
 
         RestaurantChangeService changeSrv = new RestaurantChangeService();
-        changeSrv.changePwd(userInputs);
+        changeSrv.changestarpoint(userInputs);
         }else if(userInput.compareToIgnoreCase("help")==0) {
           help();
         }else if(userInput.compareToIgnoreCase("exit")==0){

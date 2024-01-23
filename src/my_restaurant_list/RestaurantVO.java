@@ -13,7 +13,7 @@ public class RestaurantVO {
   public RestaurantVO() {
   }
 
-  public RestaurantVO(String name, String category, String starpoint, Date regDate) {
+  public RestaurantVO(String category, String name, String starpoint, Date regDate) {
     this.name = name;
     this.category = category;
     this.starpoint = starpoint;

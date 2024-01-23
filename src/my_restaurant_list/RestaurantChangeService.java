@@ -9,7 +9,7 @@ public class RestaurantChangeService {
   }
 
   // 비번 변경 요청함수
-  public void changePwd(String[] userInputs) {
+  public void changestarpoint(String[] userInputs) {
     String name = userInputs[1];
     String oldstarpoint = userInputs[2];
     String newstarpoint = userInputs[3];
@@ -24,6 +24,7 @@ public class RestaurantChangeService {
     // 가져온 vo객체의 pwd 값을 변경
     if (vo.getStarpoint().equals(oldstarpoint)) {
       vo.setStarpoint(newstarpoint);
+      System.out.println("별점이 " + oldstarpoint + " 에서 " + newstarpoint + "으로 변경되었습니다.");
     } else {
       System.out.println("입력한 별점이 이전과 동일합니다.");
       return;

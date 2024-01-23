@@ -10,12 +10,12 @@ public class RestaurantCategoryListService {
     dao = new RestaurantDAO();
   }
 
-  public void printMember(String name) {
+  public void printRestaurant(String category) {
 
-    RestaurantVO vo = dao.selectOne(name);
+    RestaurantVO vo = dao.selectOne(category);
 
     if (vo == null) {
-      System.out.println("입력한 상호명과 일치하는 정보가 없습니다.");
+      System.out.println("입력한 카테고리와 일치하는 정보가 없습니다.");
       return;
     }
 
