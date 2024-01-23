@@ -5,15 +5,14 @@ import java.util.Scanner;
 public class MainController {
 
   public static void help() {
-    System.out.println("명령어 사용법 :");
-    System.out.println("----------------------------------");
+    System.out.println("-----------명령어 사용법-----------");
     System.out.println("♧ 맛집추가 ♧ new 카테고리(한식,중식,일식,양식,분식,커피) 상호명 별점(0~5점)");
     System.out.println("♧ 별점변경 ♧ change 상호명 기존별점 변경별점");
     System.out.println("♧ 전체리스트 ♧ totalList");
     System.out.println("♧ 카테고리 리스트 ♧ categoryList 카테고리(한식,중식,일식,양식,분식,커피)");
     System.out.println("♧ 맛집프로그램 종료 ♧ exit");
+    System.out.println("--------------------------------");
     System.out.println("♥ 띄어쓰기에 유의해주세요 ♥");
-    System.out.println();
   }
 
   public static void main(String[] args) {
@@ -24,7 +23,7 @@ public class MainController {
 
     while (true) {
 
-      System.out.println("♥명령어를 입력하세요♥");
+      System.out.println("♥ 명령어를 입력하세요 ♥");
       String userInput = sc.nextLine();
 
       // 사용자가 입력한 정보를 빈칸으로 구분하여 배열로 저장
