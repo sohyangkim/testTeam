@@ -7,11 +7,12 @@ public class MainController {
   public static void help() {
     System.out.println("명령어 사용법 :");
     System.out.println("----------------------------------");
-    System.out.println("♧ 맛집추가 ♧ new 카테고리(한식,중식,일식,양식) 상호명 별점(0~5점)");
+    System.out.println("♧ 맛집추가 ♧ new 카테고리(한식,중식,일식,양식,분식,커피) 상호명 별점(0~5점)");
     System.out.println("♧ 별점변경 ♧ change 상호명 기존별점 변경별점");
-    System.out.println("♧ 전체리스트 ♧ totalList");   
-    System.out.println("♧ 카테고리 리스트 ♧ categoryList 카테고리(한식,중식,일식,양식)");
+    System.out.println("♧ 전체리스트 ♧ totalList");
+    System.out.println("♧ 카테고리 리스트 ♧ categoryList 카테고리(한식,중식,일식,양식,분식,커피)");
     System.out.println("♧ 맛집프로그램 종료 ♧ exit");
+    System.out.println("♥ 띄어쓰기에 유의해주세요 ♥");
     System.out.println();
   }
 
@@ -23,7 +24,7 @@ public class MainController {
 
     while (true) {
 
-      System.out.println("명령어를 입력하세요");
+      System.out.println("♥명령어를 입력하세요♥");
       String userInput = sc.nextLine();
 
       // 사용자가 입력한 정보를 빈칸으로 구분하여 배열로 저장
@@ -33,7 +34,8 @@ public class MainController {
 
         // 유효성검사 - 전달받은 정보의 개수를 확인
         if (userInputs.length != 4) {
-          System.out.println("입력하신 정보가 형식에 맞지 않습니다.");
+          System.out.println("♥입력하신 맛집정보가 형식에 맞지 않습니다♥");
+          System.out.println("♧ 맛집추가 ♧ new 카테고리(한식,중식,일식,양식,분식,카페) 상호명 별점(0~5점)");
           help();
           continue;
         }
@@ -61,8 +63,8 @@ public class MainController {
 
         // 유효성검사 - 전달받은 정보의 개수를 확인
         if (userInputs.length != 2) {
-          System.out.println("카테고리 검색 양식에 맞게 입력하세요.");
-          System.out.println("♧ 카테고리 리스트 ♧ categoryList 카테고리(한식,중식,일식,양식 택1)");
+          System.out.println("♥카테고리 검색 양식에 맞게 입력하세요♥");
+          System.out.println("♧ 카테고리 리스트 ♧ categoryList 카테고리(한식,중식,일식,양식,분식,카페 택1)");
           
           help();
           continue;
@@ -76,7 +78,7 @@ public class MainController {
         }else if(userInput.startsWith("change")) {
           // 유효성검사 - 전달받은 정보의 개수를 확인
           if (userInputs.length != 4) {
-          System.out.println("입력하신 정보가 형식에 맞지 않습니다.");
+          System.out.println("♥입력하신 정보가 형식에 맞게 다시 입력해주세요♥");
           help();
           continue;
         }
@@ -86,10 +88,10 @@ public class MainController {
         }else if(userInput.compareToIgnoreCase("help")==0) {
           help();
         }else if(userInput.compareToIgnoreCase("exit")==0){
-         System.out.println("프로그램을 종료합니다.");
+         System.out.println("♥프로그램을 종료♥");
          break;
         }else {
-         System.out.println("잘못된 명령어 입니다.");
+         System.out.println("♥잘못된 명령어 입니다♥");
          help();
       } // end of if
 
