@@ -2,30 +2,41 @@ package my_restaurant_list;
 
 import java.util.Date;
 
-//MemberRegisterSerivce를 정리
-public class RestaurantVO {
-
-  private String name;
+  //레스토랑 정보를 담는 데이터 객체
+  public class RestaurantVO {
+	  
+  private String name;	  
   private String category;
   private String starpoint;
   private Date regDate;
 
-  public RestaurantVO() {
-  }
+  //생성자
+  public RestaurantVO() {}
 
-  public RestaurantVO(String category, String name, String starpoint, Date regDate) {
-    this.name = name;
-    this.category = category;
-    this.starpoint = starpoint;
+  public RestaurantVO(String name, String category, String starpoint, Date regDate) {
+	
+	this.name = name;
+	this.category = category;
+	this.starpoint = starpoint;
     this.regDate = regDate;
   }
 
   @Override
   public String toString() {
-    return "restaurantVO [category=" + category + ", name=" + name + ", starpoint=" + starpoint + ", regDate=" + regDate
+	return "restaurantVO [name=" + name + "category = "+ category +", starpoint=" + starpoint + ", regDate=" + regDate
         + "]";
   }
 
+
+
+  public String getCategory() {
+		return category;
+  }
+
+  public void setCategory(String category) {
+    this.category = category;
+  }
+  
   public String getName() {
     return name;
   }
@@ -33,15 +44,6 @@ public class RestaurantVO {
   public void setName(String name) {
     this.name = name;
   }
-
-  public String getCategory() {
-    return category;
-  }
-
-  public void setCategory(String category) {
-    this.category = category;
-  }
-
   public String getStarpoint() {
     return starpoint;
   }

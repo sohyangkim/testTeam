@@ -6,11 +6,11 @@ public class MainController {
 
   public static void help() {
     System.out.println("-----------명령어 사용법-----------");
-    System.out.println("♧ 맛집추가 ♧ new 카테고리(한식,중식,일식,양식,분식,커피) 상호명 별점(0~5점)");
-    System.out.println("♧ 별점변경 ♧ change 상호명 기존별점 변경별점");
-    System.out.println("♧ 전체리스트 ♧ totalList");
-    System.out.println("♧ 카테고리 리스트 ♧ categoryList 카테고리(한식,중식,일식,양식,분식,커피)");
-    System.out.println("♧ 맛집프로그램 종료 ♧ exit");
+    System.out.println("♧ 맛집추가 하기 ♧ new 카테고리 상호명 별점(0~5점)");
+    System.out.println("♧ 별점 변경하기 ♧ change 상호명 기존별점 변경별점");
+    System.out.println("♧ 맛집 이름조회 ♧ search 상호명");
+    System.out.println("♧ 전체 목록조회 ♧ totalList");
+    System.out.println("♧ 프로그램 종료 ♧ exit");
     System.out.println("--------------------------------");
     System.out.println("♥ 띄어쓰기에 유의해주세요 ♥");
   }
@@ -26,7 +26,7 @@ public class MainController {
       System.out.println("♥ 명령어를 입력하세요 ♥");
       String userInput = sc.nextLine();
 
-      // 사용자가 입력한 정보를 빈칸으로 구분하여 배열로 저장
+      //사용자가 입력한 정보를 빈칸으로 구분하여 배열로 저장
       String[] userInputs = userInput.split(" ");
 
       if (userInput.startsWith("new")) {// "new" 로 시작한다면
@@ -34,16 +34,10 @@ public class MainController {
         // 유효성검사 - 전달받은 정보의 개수를 확인
         if (userInputs.length != 4) {
           System.out.println("♥입력하신 맛집정보가 형식에 맞지 않습니다♥");
-          System.out.println("♧ 맛집추가 ♧ new 카테고리(한식,중식,일식,양식,분식,카페) 상호명 별점(0~5점)");
+          System.out.println("♧ 맛집추가 ♧ new 카테고리 상호명 별점(0~5점)");
           help();
           continue;
         }
-        
-        /* // 유효성검사 -비번일치 여부
-        if (!dto.comparePwd()) { // dto.comparePwd() == false 와 같은 표현
-          System.out.println("입력하신 비번이 일치하지 않습니다.");
-          continue;
-        }*/
         
         // 전달받은 데이터를 RequestDTO 객체에 담는다.
         RequestDTO dto = new RequestDTO(userInputs[1], userInputs[2], userInputs[3]);
@@ -55,25 +49,25 @@ public class MainController {
 
         RestaurantTotalListService lstSrv = new RestaurantTotalListService();
 
-        // 맛집 목록 출력
+        // 맛집 목록 전체 출력
         lstSrv.printRestaurantList();
 
-      } else if (userInput.startsWith("categoryList")) {
+      } else if (userInput.startsWith("search")) {
 
         // 유효성검사 - 전달받은 정보의 개수를 확인
         if (userInputs.length != 2) {
-          System.out.println("♥카테고리 검색 양식에 맞게 입력하세요♥");
-          System.out.println("♧ 카테고리 리스트 ♧ categoryList 카테고리(한식,중식,일식,양식,분식,카페 택1)");
+          System.out.println("♥ 검색 양식에 맞게 입력하세요♥");
+          System.out.println("info 상호명");
           
           help();
           continue;
         }
 
-        // MemberInfoService 에서 printMember(email)호출
-        RestaurantCategoryListService infoSrv = new RestaurantCategoryListService();
+        // RestaurantCategoryListService 에서 printRestaurant(name)호출
+        RestaurantInfoService infoSrv = new RestaurantInfoService(); 
         infoSrv.printRestaurant(userInputs[1]);
         
-        //change 이메일 현재암호
+        //change 상호명 기존별점 변경별점
         }else if(userInput.startsWith("change")) {
           // 유효성검사 - 전달받은 정보의 개수를 확인
           if (userInputs.length != 4) {
@@ -82,8 +76,8 @@ public class MainController {
           continue;
         }
 
-        RestaurantChangeService changeSrv = new RestaurantChangeService();
-        changeSrv.changestarpoint(userInputs);
+          RestaurantChangeService changeSrv = new RestaurantChangeService();
+          changeSrv.changeStarpoint(userInputs);
         }else if(userInput.compareToIgnoreCase("help")==0) {
           help();
         }else if(userInput.compareToIgnoreCase("exit")==0){
@@ -92,6 +86,7 @@ public class MainController {
         }else {
          System.out.println("♥잘못된 명령어 입니다♥");
          help();
+         
       } // end of if
 
     } // end of while
