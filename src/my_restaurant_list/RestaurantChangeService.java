@@ -14,14 +14,14 @@ public class RestaurantChangeService {
     String oldstarpoint = userInputs[2];
     String newstarpoint = userInputs[3];
 
-    // 이메일에 해당하는 회원유무
+    // 상호명 해당유무
     RestaurantVO vo = dao.selectOne(name);
     if (vo == null) {
       System.out.println("입력한 상호명과 일치하는 정보가 없습니다.");
       return;
     }
 
-    // 가져온 vo객체의 pwd 값을 변경
+    // 가져온 vo객체의 별점을 변경
     if (vo.getStarpoint().equals(oldstarpoint)) {
       vo.setStarpoint(newstarpoint);
       System.out.println("별점이 " + oldstarpoint + " 에서 " + newstarpoint + "으로 변경되었습니다.");

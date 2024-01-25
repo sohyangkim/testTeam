@@ -58,13 +58,13 @@ public class MainController {
         // 유효성검사 - 전달받은 정보의 개수를 확인
         if (userInputs.length != 2) {
           System.out.println("♥ 검색 양식에 맞게 입력하세요♥");
-          System.out.println("info 상호명");
+          System.out.println("search 상호명");
           
           help();
           continue;
         }
 
-        // RestaurantCategoryListService 에서 printRestaurant(name)호출
+        // RestaurantInfoService 에서 printRestaurant(name)호출
         RestaurantInfoService infoSrv = new RestaurantInfoService(); 
         infoSrv.printRestaurant(userInputs[1]);
         
