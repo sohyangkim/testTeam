@@ -32,7 +32,12 @@ public class RestaurantDAO {
   public void update(RestaurantVO vo) {
    memMap.put(vo.getName(), vo);
    
-    
+   
+
+}
+
+  public void delete(String name) {
+      memMap.remove(name);
   }
 
 }
