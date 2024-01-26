@@ -31,9 +31,6 @@ public class RestaurantDAO {
   //카테고리수정
   public void update(RestaurantVO vo) {
    memMap.put(vo.getName(), vo);
-   
-   
-
 }
 
   public void delete(String name) {
